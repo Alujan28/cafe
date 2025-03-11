@@ -528,7 +528,7 @@
     font-size: small;
     color: var(--text-muted);
 }
-.carousel .list .item .introduce .seeMore{
+.carousel .list .item .introduce .see{
     font-family: Poppins;
     margin-top: 1.2em;
     padding: 5px 0;
@@ -539,7 +539,7 @@
     letter-spacing: 3px;
     transition: background 0.5s;
 }
-.carousel .list .item .introduce .seeMore:hover{
+.carousel .list .item .introduce .see:hover{
   background: var(--background-light);
 }
 .carousel .list .item:nth-child(1){
@@ -569,7 +569,7 @@
 .carousel .list .item:nth-child(2) .introduce .title,
 .carousel .list .item:nth-child(2) .introduce .topic,
 .carousel .list .item:nth-child(2) .introduce .des,
-.carousel .list .item:nth-child(2) .introduce .seeMore{
+.carousel .list .item:nth-child(2) .introduce .see{
     opacity: 0;
     animation: showContent 0.5s 1s ease-in-out 1 forwards;
 }
@@ -589,7 +589,7 @@
 .carousel .list .item:nth-child(2) .introduce .des{
     animation-delay: 1.4s;
 }
-.carousel .list .item:nth-child(2) .introduce .seeMore{
+.carousel .list .item:nth-child(2) .introduce .see{
     animation-delay: 1.6s;
 }
 /* next click */
@@ -758,7 +758,7 @@
     left: unset;
     right: 10%;
 }
-#back{
+#bac{
     position: absolute;
     z-index: 100;
     bottom: 0%;
@@ -774,7 +774,7 @@
     /* opacity: 0; */
     transition: opacity 0.5s;
 }
-.carousel.showDetail #back{
+.carousel.showDetail #bac{
     opacity: 1;
 }
 .carousel.showDetail #prev,
