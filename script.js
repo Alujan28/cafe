@@ -237,3 +237,59 @@ seeMoreButtons.forEach((button) => {
 backButton.onclick = function(){
     carousel.classList.remove('showDetail');
 }
+
+const coffeeContainer = document.querySelector('.coffee-drops-container');
+const cookiesContainer = document.querySelector('.cookies-container');
+
+// Create coffee drops on mouse move
+document.addEventListener('mousemove', (e) => {
+  // Create a new coffee drop
+  const coffeeDrop = document.createElement('div');
+  coffeeDrop.classList.add('coffee-drop');
+
+  // Randomize drop size
+  const size = Math.random() * 10 + 5; // Random size between 5px and 15px
+  coffeeDrop.style.width = `${size}px`;
+  coffeeDrop.style.height = `${size}px`;
+
+  // Randomize drop position around the mouse pointer
+  const offsetX = (Math.random() - 0.5) * 50; // Random horizontal offset
+  const offsetY = (Math.random() - 0.5) * 50; // Random vertical offset
+  coffeeDrop.style.left = `${e.pageX + offsetX}px`;
+  coffeeDrop.style.top = `${e.pageY + offsetY}px`;
+
+  // Randomize animation duration
+  const duration = Math.random() * 0.5 + 0.5; // Random duration between 0.5s and 1s
+  coffeeDrop.style.animationDuration = `${duration}s`;
+
+  // Add the drop to the container
+  coffeeContainer.appendChild(coffeeDrop);
+
+  // Remove the drop after the animation ends
+  setTimeout(() => {
+    coffeeDrop.remove();
+  }, duration * 1000);
+});
+
+// Create falling cookies at random intervals
+setInterval(() => {
+  const cookie = document.createElement('div');
+  cookie.classList.add('cookie');
+
+  // Randomize cookie position at the top of the screen
+  const startX = Math.random() * window.innerWidth; // Random horizontal position
+  cookie.style.left = `${startX}px`;
+  cookie.style.top = `0`;
+
+  // Randomize animation duration
+  const duration = Math.random() * 2 + 1; // Random duration between 1s and 3s
+  cookie.style.animationDuration = `${duration}s`;
+
+  // Add the cookie to the container
+  cookiesContainer.appendChild(cookie);
+
+  // Remove the cookie after the animation ends
+  setTimeout(() => {
+    cookie.remove();
+  }, duration * 1000);
+}, 1000); // Create a new cookie every second
